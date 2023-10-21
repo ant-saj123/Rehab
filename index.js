@@ -47,7 +47,7 @@ document.addEventListener('submit', (e) => {
 })
 
 async function fetchReply(){
-    const url = 'https://resplendent-paletas-668c50.netlify.app/.netlify/functions/fetchAI'
+    const url = 'https://rehabeviv.netlify.app/.netlify/functions/fetchAI'
 
     const response = await fetch(url, {
     method: 'POST',
