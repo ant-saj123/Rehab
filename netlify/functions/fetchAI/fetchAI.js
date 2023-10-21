@@ -13,7 +13,6 @@ const handler = async (event) => {
       messages: event.body,
       presence_penalty: 0 
   }) 
-    const subject = event.queryStringParameters.name || 'World'
     return {
       statusCode: 200,
       body: JSON.stringify({
