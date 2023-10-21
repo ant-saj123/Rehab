@@ -1,0 +1,54 @@
+
+ <!doctype html>
+<html lang = "en">
+
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+		<title>KnowItAll</title>
+		<link rel="stylesheet" href="pt.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+	</head>
+
+	<body>
+		<header>
+		<nav>
+            <div class="pic">RehabReviv</div>
+            <div class="nav-items">
+                <a href="/">Home</a>
+                <a href="pt.html">PT</a>
+            </div>
+         </nav>
+		</header>
+		<main>
+			<section class="chatbot-container">
+				<div class="chatbot-header">
+					<img src="images/doctorai.png" class="logo" alt="logo">
+					<h1>RehabRehive</h1>
+					<h2>Revive Your Body</h2>
+					<p class="supportId">User ID: 2344</p>
+				</div>
+				<div class="chatbot-convo-container" id="chatbot-convo">
+					<div class="word word-ai">
+						What injury can I help you with?
+					</div>
+				</div>
+				<form id="form" class="chatbot-input-container">
+					<input name="user-input" type="text" id="user-input" placeholder="Explain your injury" required>
+					<button id="submit-btn" class="submit-btn" type="submit">
+						<img 
+						alt="sum"
+							src="images/send-btn-icon.png" 
+							class="send-btn-icon"
+						>
+					</button>
+				</form>
+			</section>
+		</main>
+		<script type="module" src="index.js"></script>
+	</body>
+
+</html>
