@@ -18,7 +18,7 @@ const handler = async (event) => {
             statusCode: 200,
             headers: {
                 'Access-Control-Allow-Origin': 'https://rehabeviv.netlify.app',
-                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Headers': 'text/plain',
             },
             body: JSON.stringify({
                 reply: response.data,
