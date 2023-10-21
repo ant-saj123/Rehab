@@ -46,32 +46,36 @@ document.addEventListener('submit', (e) => {
     chatbotConversation.scrollTop = chatbotConversation.scrollHeight
 })
 
-async function fetchReply(){
-    const url = 'https://rehabeviv.netlify.app/.netlify/functions/fetchAI'
+async function fetchReply() {
+  const url = 'https://rehabeviv.netlify.app/.netlify/functions/fetchAI';
 
-    const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-        'content-type': 'text/plain',
-    },
-     body: conversationArr
-   })
-   const data = await response.json()
-   console.log(data)
+  try {
+      const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json', // Corrected header name to 'Content-Type'
+          },
+          body: JSON.stringify({ messages: conversationArr }), // Convert conversationArr to JSON
+      });
 
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
 
+      const data = await response.json();
+      console.log(data);
+      
+      /* 
+      // If you have additional processing after receiving the response, add it here.
+      const processedData = processData(data);
+      // Perform further actions with processedData.
+      */
 
-
-
-    /*const response = await openai.createChatCompletion({
-        model: 'gpt-4',
-        messages: conversationArr,
-        presence_penalty: 0 
-    }) 
-    //conversationArr.push(response.data.choices[0].message)
-    //renderTypewriterText(response.data.choices[0].message.content)*/
+  } catch (error) {
+      console.error('Error:', error);
+      // Handle errors here, e.g., show an error message to the user
+  }
 }
-
 function renderTypewriterText(text) {
     const newSpeechBubble = document.createElement('div')
     newSpeechBubble.classList.add('word', 'word-ai', 'blinking-cursor')
