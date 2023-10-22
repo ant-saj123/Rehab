@@ -61,10 +61,12 @@ async function fetchReply() {
       if (!response.ok) {
           throw new Error('Network response was not ok');
       }
-
       const data = await response.json();
+      const replyText = data.reply; 
+      conversationArr.push({ role: 'user', content: replyText }); 
+      renderTypewriterText(replyText);
+      console.log(data)
       
-      console.log(data);
       
       /* 
       // If you have additional processing after receiving the response, add it here.
