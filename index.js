@@ -63,6 +63,8 @@ async function fetchReply() {
       }
 
       const data = await response.json();
+      conversationArr.push(data.reply.choices[0].message)
+      renderTypewriterText(data.reply.choices[0].message.content)
       console.log(data);
       
       /* 
@@ -76,6 +78,9 @@ async function fetchReply() {
       // Handle errors here, e.g., show an error message to the user
   }
 }
+    //conversationArr.push(response.data.choices[0].message)
+    //renderTypewriterText(response.data.choices[0].message.content)*/
+
 function renderTypewriterText(text) {
     const newSpeechBubble = document.createElement('div')
     newSpeechBubble.classList.add('word', 'word-ai', 'blinking-cursor')
